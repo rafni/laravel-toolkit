@@ -24,6 +24,12 @@ Once the dependencies have been downloaded, add the service provider to your con
 ```
 You are done with the installation!
 
+## How to use
+
+Once installed, use the scaffold provided by the tool kit is very simple, just write in the **artisan console of your project** the following command:
+
+```php artisan make:service "service_name" // Without quotes and in singular
+
 ## Documentation
 
 For documentation on this package, please visit the [wiki](https://github.com/rafni/laravel-toolkit/wiki).
