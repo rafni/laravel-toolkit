@@ -31,7 +31,43 @@ Once installed, use the scaffold provided by the tool kit is very simple, just w
 ```shell
     php artisan make:service "service_name"
 ```
-Use the command without quotes and in singular.
+Use the command without quotes and in singular. 
+
+In the artisan console, if the process was successful, it will give you the access routes of the new generated resource, copy and paste these routes in the route file corresponding to your version of Laravel.
+
+This will automatically generate the following files in your project:
+
+```
+    app/
+        Http/
+            Controllers/
+                NameSpace/
+                    ServiceNameController.php
+        Repositories/
+            NameSpace/
+                ServiceNameEloquent.php
+                ServiceNameService.php
+                ServiceNameContract.php
+    resources/
+        views/
+            NameSpace/
+                index.blade.php
+                show.blade.php
+                create.blade.php
+                edit.blade.php
+                
+```
+Finally, in order for the contracts injected in the construction of the controllers do not result in a critical error, you must bind them to the service that will manage the service logic.
+
+In your app/providers/AppServiceProvider.php file, bind them as follows:
+```php
+    public function register()
+    {
+        ...
+        $this->app->bind(ExampleServiceContract::class, ExampleService::class);
+        ...
+    }
+```
 
 ## Documentation
 
