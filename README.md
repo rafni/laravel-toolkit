@@ -18,7 +18,7 @@ Once the dependencies have been downloaded, add the service provider to your con
 ```php
     'providers' => [
         ...
-        Agile\LaravelToolkit\Providers\LaravelToolkitServiceProvider::class
+        Rafni\LaravelToolkit\Providers\LaravelToolkitServiceProvider::class
         ...
     ]
 ```

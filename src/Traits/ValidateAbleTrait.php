@@ -1,12 +1,12 @@
 <?php
 
-namespace Agile\LaravelToolkit\Traits;
+namespace Rafni\LaravelToolkit\Traits;
 
 use Illuminate\Contracts\Validation\Factory as Validator;
-use Agile\LaravelToolkit\Exceptions\ValidationException;
+use Rafni\LaravelToolkit\Exceptions\ValidationException;
 /**
  * Class ValidateAbleTrait
- * @package Agile\LaravelToolkit\Traits
+ * @package Rafni\LaravelToolkit\Traits
  */
 trait ValidateAbleTrait
 {

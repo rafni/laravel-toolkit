@@ -1,12 +1,12 @@
 <?php
 
-namespace Agile\LaravelToolkit\Exceptions;
+namespace Rafni\LaravelToolkit\Exceptions;
 
 use RuntimeException;
 
 /**
  * Class ValidationException
- * @package Agile\LaravelToolkit\Exceptions
+ * @package Rafni\LaravelToolkit\Exceptions
  */
 class ValidationException extends RuntimeException
 {

@@ -2,7 +2,7 @@
 
 namespace App\Repositories\ReplaceModule;
 
-use Agile\LaravelToolkit\Traits\ValidateAbleTrait as ValidateAble;
+use Rafni\LaravelToolkit\Traits\ValidateAbleTrait as ValidateAble;
 use App\Repositories\ReplaceModule\ReplaceModel;
 use App\Repositories\ReplaceModule\ReplaceContract;
 

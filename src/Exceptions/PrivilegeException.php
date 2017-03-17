@@ -1,10 +1,10 @@
 <?php
 
-namespace Agile\LaravelToolkit\Exceptions;
+namespace Rafni\LaravelToolkit\Exceptions;
 
 /**
  * Class PrivilegeException
- * @package Agile\LaravelToolkit\Exceptions
+ * @package Rafni\LaravelToolkit\Exceptions
  */
 class PrivilegeException extends Exception
 {

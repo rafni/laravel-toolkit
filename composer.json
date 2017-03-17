@@ -1,5 +1,5 @@
 {
-    "name": "agile/laravel-toolkit",
+    "name": "rafni/laravel-toolkit",
     "description": "Some tools for Laravel development, only commands and helpers to streamline developments",
     "license": "MIT",    
     "authors": [
@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Agile\\LaravelToolkit\\": "src/"
+            "Rafni\\LaravelToolkit\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Agile\\LaravelToolkit\\Tests\\": "tests/"
+            "Rafni\\LaravelToolkit\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev",

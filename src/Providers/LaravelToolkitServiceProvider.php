@@ -1,13 +1,13 @@
 <?php
 
-namespace Agile\LaravelToolkit\Providers;
+namespace Rafni\LaravelToolkit\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Agile\LaravelToolkit\Console\GenerateService;
+use Rafni\LaravelToolkit\Console\GenerateService;
 
 /**
  * Class LaravelToolkitServiceProvider
- * @package Agile\LaravelToolkit\Providers
+ * @package Rafni\LaravelToolkit\Providers
  */
 class LaravelToolkitServiceProvider extends ServiceProvider
 {

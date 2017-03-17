@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Agile\LaravelToolkit\Console;
+namespace Rafni\LaravelToolkit\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Agile\LaravelToolkit\Exceptions\PrivilegeException;
+use Rafni\LaravelToolkit\Exceptions\PrivilegeException;
 
 class GenerateService extends Command
 {
