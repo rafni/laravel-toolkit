@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>There are {{ $ReplacePlural->lastPage() }} pages for a total of {{ $ReplacePlural->total() }} records</p>
-                    {{ Html::linkRoute('ReplaceSingular.create', 'Create new', ['class' => 'btn btn-primary']) }}
+                    {{ Html::linkRoute('ReplaceSingular.create', 'Create new', [], ['class' => 'btn btn-primary']) }}
                     <div class="table-responsive">
                         <table class="table">
                             <tr>
