@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Repositories\ReplaceModule;
+namespace App\ModulesDirectory\ReplaceModule;
 
 use Rafni\LaravelToolkit\Traits\ValidateAbleTrait as ValidateAble;
-use App\Repositories\ReplaceModule\ReplaceModel;
-use App\Repositories\ReplaceModule\ReplaceContract;
+use App\ModulesDirectory\ReplaceModule\ReplaceModel;
+use App\ModulesDirectory\ReplaceModule\ReplaceContract;
 
 /**
- * Class ReplaceModuleService
- * @package App\Repositories\ReplaceModule
+ * Class ReplaceService
+ * @package App\ModulesDirectory\ReplaceModule
  */
-class ReplaceModuleService implements ReplaceContract
+class ReplaceService implements ReplaceContract
 {
     use ValidateAble;
     
@@ -46,10 +46,10 @@ class ReplaceModuleService implements ReplaceContract
     protected $includes = [];
 
     /**
-     * ReplaceModuleService constructor.
+     * ReplaceService constructor.
      * @param ReplaceModel $model
      */
-    public function __construct(ReplaceModelEloquent $model)
+    public function __construct(ReplaceModel $model)
     {
         $this->model = $model;
     }
