@@ -24,6 +24,7 @@ class LaravelToolkitServiceProvider extends ServiceProvider
         $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\ContractBuilder::class);
         $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\RoutesBuilder::class);
         $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\MigrationBuilder::class);
+        $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\ViewBuilder::class);
         $this->commands(GenerateService::class);
     }
     
