@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class ReplaceClass
  * @package App\Repositories\ReplaceModule
  */
-class ReplaceClassEloquent extends Model
+class ReplaceClass extends Model
 {
     /**
      * The table associated with the model.

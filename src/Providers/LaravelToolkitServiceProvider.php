@@ -18,6 +18,7 @@ class LaravelToolkitServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\ModelBuilder::class);
         $this->commands(GenerateService::class);
     }
     
