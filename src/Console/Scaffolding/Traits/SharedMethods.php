@@ -20,6 +20,16 @@ trait SharedMethods
     }
     
     /**
+     * Gets the relative path of the views required
+     * 
+     * @return string
+     */
+    protected function getViewsPath()
+    {
+        return __DIR__ . '/../../../../views';
+    }
+    
+    /**
      * Gets the argument name in singular
      * 
      * @param string $string
