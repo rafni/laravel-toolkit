@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Repositories\ReplaceModule;
+namespace App\ModulesDirectory\ReplaceModule;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ReplaceClass
- * @package App\Repositories\ReplaceModule
+ * @package App\ModulesDirectory\ReplaceModule
  */
 class ReplaceClass extends Model
 {

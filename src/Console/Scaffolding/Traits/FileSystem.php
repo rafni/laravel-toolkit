@@ -61,13 +61,18 @@ trait FileSystem
     }
     
     /**
-     * Get the filename of the file
+     * Check or create the controller directory
      * 
-     * @return string
+     * @throws PrivilegeException
      */
-    protected function getFileName()
+    protected function controllerDirectory()
     {
-        return $this->getClassName().'.php';
+        $directory = app_path('Http/Controllers/'.$this->getNamespace());
+        if (! $this->filesystem->exists($directory)) {
+            if (! $this->filesystem->makeDirectory($directory)) {
+                throw new PrivilegeException('You do not have privileges to generate the necessary directories in the route: '.$directory);
+            }
+        }
     }
     
     /**
@@ -82,16 +87,18 @@ trait FileSystem
     
     /**
      * Write the file into the application's file system
+     * 
+     * @param string $type
      */
-    protected function writeFile()
+    protected function writeFile($type)
     {
         if (! $this->filesystem->exists($this->getFilePath())) {
             if ($this->filesystem->put($this->getFilePath(), $this->getFileContent())) {
-                $this->info('Model created successfully.');
+                $this->info($type.' created successfully.');
             }
             
         } else {
-            $this->error('Model already exists!');
+            $this->error($type.' already exists!');
         }
     }
     

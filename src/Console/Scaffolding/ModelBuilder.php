@@ -59,7 +59,7 @@ class ModelBuilder extends Command
     public function handle()
     {
         $this->makeDirectories();
-        $this->writeFile();
+        $this->writeFile('Model');
     }
     
     /**
@@ -70,6 +70,7 @@ class ModelBuilder extends Command
     public function getFileContent()
     {
         $replacers = [
+            'ModulesDirectory' => $this->getDirectoryModules(),
             'ReplaceTable' => $this->getTableName(),
             'ReplaceClass' => $this->getClassName(),
             'ReplaceModule' => $this->getNamespace()
@@ -89,7 +90,7 @@ class ModelBuilder extends Command
     }
     
     /**
-     * Gets the name of the table that the model uses
+     * Gets the namespace for this module
      * 
      * @return string
      */
@@ -100,11 +101,22 @@ class ModelBuilder extends Command
     
     /**
      * Gets the class name that the model uses
+     * 
      * @return string
      */
     protected function getClassName()
     {
         return studly_case($this->getSingular($this->argument('name')));
+    }
+    
+    /**
+     * Get the filename of the file
+     * 
+     * @return string
+     */
+    protected function getFileName()
+    {
+        return $this->getClassName().'.php';
     }
     
 }
