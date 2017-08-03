@@ -64,6 +64,22 @@ trait FileSystem
     }
     
     /**
+     * Check or create the view directory for the package
+     * 
+     * @throws PrivilegeException
+     */
+    protected function viewsDirectory()
+    {
+        $directory = resource_path('views/'.strtolower($this->getModule()));
+        if (! $this->filesystem->exists($directory)) {
+            if (! $this->filesystem->makeDirectory($directory)) {
+                throw new PrivilegeException('You do not have privileges to generate the necessary directories in the route: '.$directory);
+            }
+        }
+        return $directory;
+    }
+    
+    /**
      * Check or create the controller directory
      * 
      * @throws PrivilegeException
