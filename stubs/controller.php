@@ -4,13 +4,13 @@ namespace App\Http\Controllers\ReplaceModule;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repositories\ReplaceModule\ReplaceContract;
+use App\ModulesDirectory\ReplaceModule\ReplaceContract;
 
 /**
- * Class ReplaceModuleController
+ * Class ReplaceController
  * @package App\Http\Controllers\ReplaceModule
  */
-class ReplaceModuleController extends Controller
+class ReplaceController extends Controller
 {
     /**
      * @var ReplaceContract
@@ -18,7 +18,7 @@ class ReplaceModuleController extends Controller
     protected $service;
 
     /**
-     * ReplaceModuleController constructor.
+     * ReplaceController constructor.
      * 
      * @param ReplaceContract $service
      */
