@@ -24,9 +24,10 @@ trait FileSystem
     protected function makeDirectories($controller = false)
     {
         $this->mainDirectory();
-        $this->moduleDirectory();
         if ($controller) {
-            
+            $this->controllerDirectory();
+        } else {
+            $this->moduleDirectory();
         }
     }
     
@@ -43,6 +44,7 @@ trait FileSystem
                 throw new PrivilegeException('You do not have privileges to generate the necessary directories in the route: '.$directory);
             }
         }
+        return $directory;
     }
     
     /**
@@ -52,12 +54,13 @@ trait FileSystem
      */
     protected function moduleDirectory()
     {
-        $directory = app_path($this->getDirectoryModules().'/'.$this->getNamespace());
+        $directory = app_path($this->getDirectoryModules().'/'.$this->getModule());
         if (! $this->filesystem->exists($directory)) {
             if (! $this->filesystem->makeDirectory($directory)) {
                 throw new PrivilegeException('You do not have privileges to generate the necessary directories in the route: '.$directory);
             }
         }
+        return $directory;
     }
     
     /**
@@ -67,12 +70,13 @@ trait FileSystem
      */
     protected function controllerDirectory()
     {
-        $directory = app_path('Http/Controllers/'.$this->getNamespace());
+        $directory = app_path('Http/Controllers/'.$this->getModule());
         if (! $this->filesystem->exists($directory)) {
             if (! $this->filesystem->makeDirectory($directory)) {
                 throw new PrivilegeException('You do not have privileges to generate the necessary directories in the route: '.$directory);
             }
         }
+        return $directory;
     }
     
     /**
@@ -82,7 +86,7 @@ trait FileSystem
      */
     protected function getFilePath()
     {
-        return app_path($this->getDirectoryModules().'/'.$this->getNamespace().'/'.$this->getFileName());
+        return $this->moduleDirectory().'/'.$this->getFileName();
     }
     
     /**

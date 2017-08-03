@@ -5,10 +5,10 @@ namespace App\ModulesDirectory\ReplaceModule;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class ReplaceClass
+ * Class ReplaceModel
  * @package App\ModulesDirectory\ReplaceModule
  */
-class ReplaceClass extends Model
+class ReplaceModel extends Model
 {
     /**
      * The table associated with the model.

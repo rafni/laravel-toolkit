@@ -71,53 +71,13 @@ class ServiceBuilder extends Command
     {
         $replacers = [
             'ModulesDirectory' => $this->getDirectoryModules(),
-            'ReplaceModule' => $this->getNamespace(),
+            'ReplaceModule' => $this->getModule(),
             'ReplaceContract' => $this->getContract(),
             'ReplaceModel' => $this->getModel(),
-            'ReplaceService' => $this->getClassName()
+            'ReplaceService' => $this->getService()
         ];
         
         return $this->replacer($replacers);
-    }
-    
-    /**
-     * Gets the namespace for this module
-     * 
-     * @return string
-     */
-    protected function getNamespace()
-    {
-        return studly_case($this->getPlural($this->argument('name')));
-    }
-    
-    /**
-     * Gets the class name that the service uses
-     * 
-     * @return string
-     */
-    protected function getClassName()
-    {
-        return studly_case($this->getSingular($this->argument('name'))).'Service';
-    }
-    
-    /**
-     * Gets the contract that will be used in the service
-     * 
-     * @return string
-     */
-    protected function getContract()
-    {
-        return studly_case($this->getSingular($this->argument('name'))).'Contract';
-    }
-    
-    /**
-     * Gets the name of the model that will be used in the service
-     * 
-     * @return string
-     */
-    protected function getModel()
-    {
-        return studly_case($this->getSingular($this->argument('name')));
     }
     
     /**
@@ -127,7 +87,7 @@ class ServiceBuilder extends Command
      */
     protected function getFileName()
     {
-        return $this->getClassName().'.php';
+        return $this->getService().'.php';
     }
     
 }

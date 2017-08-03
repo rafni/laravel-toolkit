@@ -58,7 +58,7 @@ class ControllerBuilder extends Command
      */
     public function handle()
     {
-        $this->makeDirectories();
+        $this->makeDirectories(true);
         $this->writeFile('Controller');
     }
     
@@ -71,8 +71,8 @@ class ControllerBuilder extends Command
     {
         $replacers = [
             'ModulesDirectory' => $this->getDirectoryModules(),
-            'ReplaceModule' => $this->getNamespace(),
-            'ReplaceController' => $this->getClassName(),
+            'ReplaceModule' => $this->getModule(),
+            'ReplaceController' => $this->getController(),
             'ReplaceContract' => $this->getContract(),
             'ReplacePlural' => $this->getPlural($this->argument('name')),
             'ReplaceSingular' => $this->getSingular($this->argument('name'))
@@ -82,33 +82,13 @@ class ControllerBuilder extends Command
     }
     
     /**
-     * Gets the namespace for this module
+     * Get the file path
      * 
      * @return string
      */
-    protected function getNamespace()
+    protected function getFilePath()
     {
-        return studly_case($this->getPlural($this->argument('name')));
-    }
-    
-    /**
-     * Gets the class name that the controller uses
-     * 
-     * @return string
-     */
-    protected function getClassName()
-    {
-        return studly_case($this->getPlural($this->argument('name'))).'Controller';
-    }
-    
-    /**
-     * Gets the contract that will be used in the service
-     * 
-     * @return string
-     */
-    protected function getContract()
-    {
-        return studly_case($this->getSingular($this->argument('name'))).'Contract';
+        return $this->controllerDirectory().'/'.$this->getFileName();
     }
     
     /**
@@ -118,7 +98,7 @@ class ControllerBuilder extends Command
      */
     protected function getFileName()
     {
-        return $this->getClassName().'.php';
+        return $this->getController().'.php';
     }
     
 }

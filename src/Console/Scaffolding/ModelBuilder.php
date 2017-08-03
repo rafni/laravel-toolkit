@@ -71,42 +71,12 @@ class ModelBuilder extends Command
     {
         $replacers = [
             'ModulesDirectory' => $this->getDirectoryModules(),
-            'ReplaceTable' => $this->getTableName(),
-            'ReplaceClass' => $this->getClassName(),
-            'ReplaceModule' => $this->getNamespace()
+            'ReplaceModule' => $this->getModule(),
+            'ReplaceModel' => $this->getModel(),
+            'ReplaceTable' => $this->getTableName()
         ];
         
         return $this->replacer($replacers);
-    }
-    
-    /**
-     * Gets the name of the table that the model uses
-     * 
-     * @return string
-     */
-    protected function getTableName()
-    {
-        return $this->getPlural($this->argument('name'));
-    }
-    
-    /**
-     * Gets the namespace for this module
-     * 
-     * @return string
-     */
-    protected function getNamespace()
-    {
-        return studly_case($this->getPlural($this->argument('name')));
-    }
-    
-    /**
-     * Gets the class name that the model uses
-     * 
-     * @return string
-     */
-    protected function getClassName()
-    {
-        return studly_case($this->getSingular($this->argument('name')));
     }
     
     /**
@@ -116,7 +86,7 @@ class ModelBuilder extends Command
      */
     protected function getFileName()
     {
-        return $this->getClassName().'.php';
+        return $this->getModel().'.php';
     }
     
 }
