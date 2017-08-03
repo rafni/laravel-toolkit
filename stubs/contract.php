@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Repositories\ReplaceModule;
-
-use App\Repositories\ReplaceModule\ReplaceModel;
+namespace App\ModulesDirectory\ReplaceModule;
 
 /**
  * Class ReplaceContract
- * @package App\Repositories\ReplaceModule
+ * @package App\ModulesDirectory\ReplaceModule
  */
 interface ReplaceContract
 {
