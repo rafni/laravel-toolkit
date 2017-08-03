@@ -41,10 +41,15 @@ class MigrationBuilder extends Command
     public function handle()
     {
         $table = $this->getTableName();
-        $this->call('make:migration', [
-            'name' => 'create_'.$table.'_table',
-            '--create' => $table
-        ]);
+        try {
+            $this->call('make:migration', [
+                'name' => 'create_'.$table.'_table',
+                '--create' => $table
+            ]);
+            
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
+        }
     }
     
 }
