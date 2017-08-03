@@ -42,8 +42,8 @@ class PackageBuilder extends Command
         $this->call('toolkit:contract', ['name' => $this->argument('name')]);
         $this->call('toolkit:service', ['name' => $this->argument('name')]);
         $this->call('toolkit:controller', ['name' => $this->argument('name')]);
-        $this->call('toolkit:routes', ['name' => $this->argument('name')]);
         $this->call('toolkit:views', ['name' => $this->argument('name')]);
+        $this->call('toolkit:routes', ['name' => $this->argument('name')]);
     }
     
 }
