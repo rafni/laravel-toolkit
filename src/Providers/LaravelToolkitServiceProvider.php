@@ -3,7 +3,6 @@
 namespace Rafni\LaravelToolkit\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Rafni\LaravelToolkit\Console\GenerateService;
 
 /**
  * Class LaravelToolkitServiceProvider
@@ -18,14 +17,16 @@ class LaravelToolkitServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\PackageBuilder::class);
-        $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\ControllerBuilder::class);
-        $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\ModelBuilder::class);
-        $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\ServiceBuilder::class);
-        $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\ContractBuilder::class);
-        $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\RoutesBuilder::class);
-        $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\MigrationBuilder::class);
-        $this->commands(\Rafni\LaravelToolkit\Console\Scaffolding\ViewBuilder::class);
+        $this->commands([
+            \Rafni\LaravelToolkit\Console\Scaffolding\PackageBuilder::class,
+            \Rafni\LaravelToolkit\Console\Scaffolding\ControllerBuilder::class,
+            \Rafni\LaravelToolkit\Console\Scaffolding\ModelBuilder::class,
+            \Rafni\LaravelToolkit\Console\Scaffolding\ServiceBuilder::class,
+            \Rafni\LaravelToolkit\Console\Scaffolding\ContractBuilder::class,
+            \Rafni\LaravelToolkit\Console\Scaffolding\RoutesBuilder::class,
+            \Rafni\LaravelToolkit\Console\Scaffolding\MigrationBuilder::class,
+            \Rafni\LaravelToolkit\Console\Scaffolding\ViewBuilder::class,
+        ]);
     }
     
     /**
