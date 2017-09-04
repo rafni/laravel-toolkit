@@ -13,7 +13,7 @@ trait FileSystem
      */
     protected function getDirectoryModules()
     {
-        return 'Services';
+        return 'Repositories';
     }
     
     /**

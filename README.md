@@ -4,14 +4,14 @@ laravel-toolkit
 
 ## Versions
 
-This is version 5.0 of the development kit for the Laravel 5.0 framework or higher.
+This is version 5.1 of the development kit for the Laravel 5.0 framework or higher.
 
 ## Installation
 
 To install this update your composer.json file to require
 
 ```json
-    "agile/laravel-toolkit" : "~5.0"
+    "rafni/laravel-toolkit" : "~5.*"
 ```
 Once the dependencies have been downloaded, add the service provider to your config/app.php file
 
