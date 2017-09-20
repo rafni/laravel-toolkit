@@ -26,6 +26,13 @@
             "Rafni\\LaravelToolkit\\Tests\\": "tests/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rafni\\LaravelToolkit\\Providers\\LaravelToolkitServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
